@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 using ThereIsNoGhostHere.Input;
@@ -28,30 +29,44 @@ namespace ThereIsNoGhostHere.Player
         {
             HandleCursorToggle();
 
-            if (Cursor.lockState != CursorLockMode.Locked) return;
+            if (Cursor.lockState != CursorLockMode.Locked)
+                return;
 
-            Vector2 look = _input.Look * sensitivity;
+            float lookY = _input.Look.y * sensitivity;
 
-            // Sağa-sola: Player gövdəsi
-            transform.Rotate(Vector3.up * look.x);
+            _pitch = Mathf.Clamp(
+                _pitch - lookY,
+                -maxPitch,
+                maxPitch
+            );
 
-            // Yuxarı-aşağı: Camera
-            _pitch = Mathf.Clamp(_pitch - look.y, -maxPitch, maxPitch);
-            cameraTransform.localRotation = Quaternion.Euler(_pitch, 0f, 0f);
+            cameraTransform.localRotation =
+                Quaternion.Euler(_pitch, 0f, 0f);
         }
 
         private void HandleCursorToggle()
         {
-            if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
+            if (Keyboard.current != null &&
+                Keyboard.current.escapeKey.wasPressedThisFrame)
+            {
                 SetCursorLocked(false);
-            else if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame
-                     && Cursor.lockState != CursorLockMode.Locked)
+            }
+            else if (
+                Mouse.current != null &&
+                Mouse.current.leftButton.wasPressedThisFrame &&
+                Cursor.lockState != CursorLockMode.Locked
+            )
+            {
                 SetCursorLocked(true);
+            }
         }
 
         private static void SetCursorLocked(bool locked)
         {
-            Cursor.lockState = locked ? CursorLockMode.Locked : CursorLockMode.None;
+            Cursor.lockState = locked
+                ? CursorLockMode.Locked
+                : CursorLockMode.None;
+
             Cursor.visible = !locked;
         }
     }
