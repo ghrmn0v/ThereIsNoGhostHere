@@ -9,7 +9,6 @@ namespace ThereIsNoGhostHere.Player
     {
         [Header("Speed")]
         [SerializeField] private float walkSpeed = 3f;
-        [SerializeField] private float sprintSpeed = 5f;
         [SerializeField] private float crouchSpeed = 1.5f;
 
         [Header("Gravity")]
@@ -90,11 +89,7 @@ namespace ThereIsNoGhostHere.Player
             Vector2 input = _input.Move;
             Vector3 direction = transform.right * input.x + transform.forward * input.y;
 
-            float speed = walkSpeed;
-            if (_isCrouching)
-                speed = crouchSpeed;
-            else if (_input.SprintHeld && input.y > 0f) // sprint yalnız irəli
-                speed = sprintSpeed;
+            float speed = _isCrouching ? crouchSpeed : walkSpeed;
 
             if (_controller.isGrounded && _verticalVelocity < 0f)
                 _verticalVelocity = -2f;

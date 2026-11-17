@@ -27,16 +27,6 @@
                     "priority": 0
                 },
                 {
-                    "name": "Sprint",
-                    "type": "Button",
-                    "id": "f33f844b-1443-4abb-9b6d-65321f4357eb",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false,
-                    "priority": 0
-                },
-                {
                     "name": "Crouch",
                     "type": "Button",
                     "id": "908fcab6-7daf-414b-b6a5-cf6a10d3a014",
@@ -116,19 +106,8 @@
                 },
                 {
                     "name": "",
-                    "id": "2d124e16-91a6-40ce-bd95-74d48890f46c",
-                    "path": "<Keyboard>/leftShift",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Sprint",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "6a95f051-fe2c-4f84-9a76-566a7613c0da",
-                    "path": "<Keyboard>/c",
+                    "path": "<Keyboard>/leftShift",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "",
