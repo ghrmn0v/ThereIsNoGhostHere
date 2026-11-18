@@ -242,6 +242,7 @@ GameObject:
   - component: {fileID: 9170250815656393719}
   - component: {fileID: 8157727661689425980}
   - component: {fileID: 6697519951879157315}
+  - component: {fileID: 7398093509342428879}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -416,3 +417,22 @@ MonoBehaviour:
   standingCameraY: 1.6
   crouchingCameraY: 0.8
   inputTimeout: 0.25
+--- !u!114 &7398093509342428879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909509679103441991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e04f2a5b110c0149a2ccd1b7539c31c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ThereIsNoGhostHere.Networking.PlayerVisualController
+  ShowTopMostFoldoutHeaderGroup: 1
+  visualRenderer: {fileID: 7085623901373974798}
+  playerColors:
+  - {r: 0, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  - {r: 0, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0, b: 1, a: 1}
